@@ -1,0 +1,28 @@
+/**
+ * Place your custom CSS styles here.
+ **/
+
+#basic-square {
+	width:100%;
+	height:10px;
+	border:1px solid #000;
+	background-color:blue
+}
+
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: #00a087;
+  color: red
+}
+
+.fixed-nav-space {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+}

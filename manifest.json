@@ -1,0 +1,53 @@
+{
+  "name": "SheStocks",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Get stocks info on the go",
+  "default_locale": "en",
+  "permissions": [
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "src/bg/eventPage.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "css": [
+        "src/inject/inject.css",
+        "src/inject/css/buttons.css",
+        "src/inject/css/demo.css",
+        "src/inject/css/menu_topexpand.css",
+        "src/inject/css/normalize.css"
+      ],
+      "js": [
+        "js/jquery/jquery.min.js",
+        "src/inject/inject.js",
+        "src/inject/js/classie.js",
+        "src/inject/js/main.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]  
+   , "web_accessible_resources": [
+        "src/inject/inject.css",
+        "src/inject/css/buttons.css",
+        "src/inject/css/demo.css",
+        "src/inject/css/menu_topexpand.css",
+        "src/inject/css/normalize.css",
+       "js/jquery/jquery.min.js",
+        "src/inject/inject.js",
+        "src/inject/js/classie.js",
+        "src/inject/js/main.js",
+        "src/inject/fonts/Alef-Bold.eot",
+        "src/inject/fonts/Alef-Bold.svg",
+        "src/inject/fonts/Alef-Bold.ttf",
+        "src/inject/fonts/Alef-Bold.woff",
+        "icons/newtabicon.png"
+    ]
+}
