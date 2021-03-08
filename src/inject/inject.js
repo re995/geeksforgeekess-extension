@@ -20,7 +20,7 @@ function getDomainFromUrl(url) {
     //find & remove "?"
     hostname = hostname.split('?')[0];
 
-    return hostname.replace(".com", "").replace("www.", "");
+    return hostname.replace(".com", "").replace(".co.il", "").replace("www.", "");
 }
 
 function siteNameFromUrl(url) {
@@ -77,7 +77,7 @@ function tryShowPopup(currentUrl) {
   var popupToInject = '<div style="background:inherit" class="menu-wrap buytheway">' +
 				'<nav style="background:inherit" class="menu buytheway sticky navbar navbar-default navbar-fixed-top" >' +
         "<iframe id='st_af7a75818bc7411cab50ef05fe0494a1' frameBorder='0' scrolling='no' width='100%' height='50%' src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=01E29D3ADEC844F799CC7476C142A17B&symbols=" + stocksymbol + ";AAPL;MSFT;GOOG;FB;ORCL&palette=Financial-Dark&layoutType=2&onload=st_af7a75818bc7411cab50ef05fe0494a1'></iframe>"
-+    '<a id ="btn_newtab" style="margin:auto;"><h3 style="text-align:center;">    את המנייה של ' + toFirstCapital(sitename) + ' כבר ראית?</h3></a>' +
++    '<button type="button" class="btn btn-link><a class="link-primary" id ="btn_newtab" style="margin:auto;"><h3 style="text-align:center;">    את המנייה של ' + toFirstCapital(sitename) + ' כבר ראית?</h3></a></button>' +
 
 
 
@@ -89,8 +89,8 @@ function tryShowPopup(currentUrl) {
         <div class="modal-dialog modal-lg">
         <div class="modal-content"><div>
         <iframe frameBorder='0' scrolling='no' width='800' height='400' id="graph" src='https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=01E29D3ADEC844F799CC7476C142A17B&symbol=TSLA&palette=Financial-Light&showLogo=Title'></iframe></div>
-            <div id='moreinfo_content_top' style="text-align:right;" ></div>
-            <div id='moreinfo_content_extra' style="text-align:right;" ></div>
+            <div id='moreinfo_content_top' dir='rtl' style="text-align:right;" ></div>
+            <div id='moreinfo_content_extra' dir='rtl' style="text-align:right;" ></div>
             </div>
         </div>
     </div>
