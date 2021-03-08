@@ -24,10 +24,12 @@
         "src/inject/css/buttons.css",
         "src/inject/css/demo.css",
         "src/inject/css/menu_topexpand.css",
-        "src/inject/css/normalize.css"
+        "src/inject/css/normalize.css",
+        "css/bootstrap.min.css"
       ],
       "js": [
         "js/jquery/jquery.min.js",
+        "js/bootstrap.min.js",
         "src/inject/inject.js",
         "src/inject/js/classie.js",
         "src/inject/js/main.js"
@@ -36,6 +38,8 @@
     }
   ]  
    , "web_accessible_resources": [
+        "css/bootstrap.min.css",
+        "js/bootstrap.min.js",
         "src/inject/inject.css",
         "src/inject/css/buttons.css",
         "src/inject/css/demo.css",
