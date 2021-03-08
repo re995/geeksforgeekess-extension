@@ -24,8 +24,8 @@
 }
 
 div.buytheway {
-	background: #b4bad2;
-	color: #fffce1;
+	background: inherit;
+	color: inherit;
 	font-weight: 400;
 	font-size: 1.3em;
 	font-family: 'Alef', Arial, sans-serif;

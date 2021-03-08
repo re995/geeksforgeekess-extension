@@ -23,9 +23,11 @@ function getDomainFromUrl(url) {
     return hostname.replace(".com", "").replace("www.", "");
 }
 
-function translateUrlToStockSymbol(url) {
-    var sitename = getDomainFromUrl(url)
-    console.log("SITENAME = " + sitename);
+function siteNameFromUrl(url) {
+    return getDomainFromUrl(url)
+}
+
+function translateUrlToStockSymbol(sitename) {
     var requestUrl =  'https://financialmodelingprep.com/api/v3/search?query=' + sitename + '&limit=10&apikey=demo';
     console.log("Requesting: " + requestUrl)
     var response = $.ajax(
@@ -42,9 +44,17 @@ function translateUrlToStockSymbol(url) {
     return responseObject[0]['symbol'];
 }
 
+function toFirstCapital(text) {
+    var firstLetter = text[0].toUpperCase()
+    var all = text.substr(1)
+    return firstLetter + all
+}
+
 function tryShowPopup(currentUrl) {
   var myid = chrome.runtime.id;
-  var stocksymbol = translateUrlToStockSymbol(currentUrl)
+  var sitename = siteNameFromUrl(currentUrl)
+  console.log("SITENAME = " + sitename);
+  var stocksymbol = translateUrlToStockSymbol(sitename)
   if (stocksymbol === null) {
         console.log("Couldn't find a matching stock. Not showing")
         return;
@@ -67,7 +77,10 @@ function tryShowPopup(currentUrl) {
   var popupToInject = '<div style="background:inherit" class="menu-wrap buytheway">' +
 				'<nav style="background:inherit" class="menu buytheway sticky navbar navbar-default navbar-fixed-top" >' +
         "<iframe id='st_af7a75818bc7411cab50ef05fe0494a1' frameBorder='0' scrolling='no' width='100%' height='50%' src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=01E29D3ADEC844F799CC7476C142A17B&symbols=" + stocksymbol + ";AAPL;MSFT;GOOG;FB;ORCL&palette=Financial-Dark&layoutType=2&onload=st_af7a75818bc7411cab50ef05fe0494a1'></iframe>" +
+    '<div style="display:flex">' +
+    '<div>את המנייה של ' + toFirstCapital(sitename) + ' כבר ראית?</div>' +
     '<button id ="btn_newtab" class="btn btn-sm btn-info"><span>לחצי כאן!</span></button>' +
+    '</div>' +
 
     '<a href="#" id="btn_close" class="close-thin buytheway"></a>' +
 				'</nav>' +
@@ -119,7 +132,7 @@ function setupMoreInfoPopup(stocksymbol) {
     });
 
     var responseText = response.responseText;
-    if (responseText.length == 0) {
+    if (responseText == undefined || responseText.length == 0) {
         console.error("Error while getting more info from server!")
     }
 
