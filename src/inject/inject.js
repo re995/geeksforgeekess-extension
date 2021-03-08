@@ -68,17 +68,15 @@ function tryShowPopup(currentUrl) {
 				'<nav style="background:inherit" class="menu buytheway sticky navbar navbar-default navbar-fixed-top" >' +
         "<iframe id='st_af7a75818bc7411cab50ef05fe0494a1' frameBorder='0' scrolling='no' width='100%' height='50%' src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=01E29D3ADEC844F799CC7476C142A17B&symbols=" + stocksymbol + ";AAPL;MSFT;GOOG;FB;ORCL&palette=Financial-Dark&layoutType=2&onload=st_af7a75818bc7411cab50ef05fe0494a1'></iframe>" +
     '<button id ="btn_newtab" class="btn btn-sm btn-info"><span>לחצי כאן!</span></button>' +
-
     '<a href="#" id="btn_close" class="close-thin buytheway"></a>' +
 				'</nav>' +
     '</div>' +
     `
     <div style="margin-top:60px;" id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                  <iframe frameBorder='0' scrolling='no' width='600' height='320' id="graph" src='https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=01E29D3ADEC844F799CC7476C142A17B&symbol=TSLA&palette=Financial-Light&showLogo=Title'></iframe>
-                  <div id='moreinfo_content'></div>
-                </div>
+        <div class="modal-content">
+        <iframe frameBorder='0' scrolling='no' width='700' height='320' id="graph" src='https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=01E29D3ADEC844F799CC7476C142A17B&symbol=TSLA&palette=Financial-Light&showLogo=Title'></iframe>
+            <div id='moreinfo_content' style="text-align:right;" ></div>
             </div>
         </div>
     </div>
