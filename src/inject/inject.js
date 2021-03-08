@@ -67,7 +67,7 @@ function tryShowPopup(currentUrl) {
   var popupToInject = '<div style="background:inherit" class="menu-wrap buytheway">' +
 				'<nav style="background:inherit" class="menu buytheway sticky navbar navbar-default navbar-fixed-top" >' +
         "<iframe id='st_af7a75818bc7411cab50ef05fe0494a1' frameBorder='0' scrolling='no' width='100%' height='50%' src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=01E29D3ADEC844F799CC7476C142A17B&symbols=" + stocksymbol + ";AAPL;MSFT;GOOG;FB;ORCL&palette=Financial-Dark&layoutType=2&onload=st_af7a75818bc7411cab50ef05fe0494a1'></iframe>" +
-    '<button id ="btn_newtab" class=" btn btn-sm btn-primary"><i class="button__icon icon"><img src="chrome-extension://' + myid + '/icons/newtabicon.png" /></i><span>לחצי כאן!</span></button>' +
+    '<button id ="btn_newtab" class="btn btn-sm btn-info"><span>לחצי כאן!</span></button>' +
 
     '<a href="#" id="btn_close" class="close-thin buytheway"></a>' +
 				'</nav>' +
