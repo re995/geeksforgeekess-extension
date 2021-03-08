@@ -5,7 +5,8 @@
   "description": "Get stocks info on the go",
   "default_locale": "en",
   "permissions": [
-    "tabs"
+    "tabs",
+    "https://financialmodelingprep.com/"
   ],
   "background": {
     "scripts": [
