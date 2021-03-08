@@ -90,7 +90,8 @@ function tryShowPopup(currentUrl) {
         <div class="modal-dialog modal-lg">
         <div class="modal-content">
         <iframe frameBorder='0' scrolling='no' width='700' height='320' id="graph" src='https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=01E29D3ADEC844F799CC7476C142A17B&symbol=TSLA&palette=Financial-Light&showLogo=Title'></iframe>
-            <div id='moreinfo_content' style="text-align:right;" ></div>
+            <div id='moreinfo_content_top' style="text-align:right;" ></div>
+            <div id='moreinfo_content_extra' style="text-align:right;" ></div>
             </div>
         </div>
     </div>
@@ -119,22 +120,39 @@ function setupMoreInfoPopup(stocksymbol) {
         $("#graph").attr('src', link);
     });
 
-  var extraContent = ""
-  var response = $.ajax(
+  var response_top = $.ajax(
     {
       method: 'GET',
-      url: 'http://127.0.0.1:5000/request',
-      headres: {
+      url: 'http://127.0.0.1:5000/request-first',
+      headers: {
         'Access-Control-Allow-Origin': '*'
       },
       async: false
     });
 
-    var responseText = response.responseText;
+    var responseText = response_top.responseText;
     if (responseText == undefined || responseText.length == 0) {
         console.error("Error while getting more info from server!")
     }
+    else {
+        $("#moreinfo_content_top").html(responseText);
+    }
 
-    $("#moreinfo_content").html(responseText);
+  var response_extra = $.ajax(
+    {
+      method: 'GET',
+      url: 'http://127.0.0.1:5000/request-random',
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },
+      async: false
+    });
 
+    responseText = response_extra.responseText;
+    if (responseText == undefined || responseText.length == 0) {
+        console.error("Error while getting more info from server!")
+    }
+    else {
+        $("#moreinfo_content_extra").html(responseText);
+    }
 }
