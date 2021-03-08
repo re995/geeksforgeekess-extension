@@ -72,11 +72,11 @@ function tryShowPopup(currentUrl) {
   var scriptsToInject = '<script src="chrome-extension://' + myid + '/src/inject/js/classie.js"></script>' +
     '<script src="chrome-extension://' + myid + '/src/inject/js/main.js"></script>' +
     '<script src="chrome-extension://' + myid + '/js/bootstrap.min.js"></script>' +
-    '<script>var link="https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=01E29D3ADEC844F799CC7476C142A17B&symbol=' + stocksymbol + '&palette=Financial-Light&showLogo=Title";$(document).ready(function(){$("#btn_newtab").click(function(){$("#myModal").modal("show"),$("#graph").attr("src",link)})}); </script>';
+    '<script>var link="https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=B54B476A3E11492F93195F7F1533E3A7&symbol=' + stocksymbol + '&palette=Financial-Light&showLogo=Title";$(document).ready(function(){$("#btn_newtab").click(function(){$("#myModal").modal("show"),$("#graph").attr("src",link)})}); </script>';
 
   var popupToInject = '<div style="background:inherit" class="menu-wrap buytheway">' +
 				'<nav style="background:inherit" class="menu buytheway sticky navbar navbar-default navbar-fixed-top" >' +
-        "<iframe id='st_af7a75818bc7411cab50ef05fe0494a1' frameBorder='0' scrolling='no' width='100%' height='50%' src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=01E29D3ADEC844F799CC7476C142A17B&symbols=" + stocksymbol + ";AAPL;MSFT;GOOG;FB;ORCL&palette=Financial-Dark&layoutType=2&onload=st_af7a75818bc7411cab50ef05fe0494a1'></iframe>"
+        "<iframe id='st_af7a75818bc7411cab50ef05fe0494a1' frameBorder='0' scrolling='no' width='100%' height='50%' src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=B54B476A3E11492F93195F7F1533E3A7&symbols=" + stocksymbol + ";AAPL;MSFT;GOOG;FB;ORCL&palette=Financial-Dark&layoutType=2&onload=st_af7a75818bc7411cab50ef05fe0494a1'></iframe>"
 +    '<button type="button" class="btn btn-link><a class="link-primary" id ="btn_newtab" style="margin:auto;"><h3 style="text-align:center;">    את המנייה של ' + toFirstCapital(sitename) + ' כבר ראית?</h3></a></button>' +
 
 
@@ -88,7 +88,7 @@ function tryShowPopup(currentUrl) {
     <div style="margin-top:60px;" id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1">
         <div class="modal-dialog modal-lg">
         <div class="modal-content"><div>
-        <iframe frameBorder='0' scrolling='no' width='800' height='400' id="graph" src='https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=01E29D3ADEC844F799CC7476C142A17B&symbol=TSLA&palette=Financial-Light&showLogo=Title'></iframe></div>
+        <iframe frameBorder='0' scrolling='no' width='800' height='400' id="graph" src='https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=B54B476A3E11492F93195F7F1533E3A7&symbol=TSLA&palette=Financial-Light&showLogo=Title'></iframe></div>
             <div id='moreinfo_content_top' class='buytheway' dir='rtl' style="text-align:right;" ></div>
             <div id='moreinfo_content_extra' class='buytheway' dir='rtl' style="text-align:right;" ></div>
             </div>
@@ -113,7 +113,7 @@ function tryShowPopup(currentUrl) {
 
 function setupMoreInfoPopup(stocksymbol) {
   console.log("Setting button onclick for symbol " + stocksymbol)
-  var link = 'https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=01E29D3ADEC844F799CC7476C142A17B&symbol='+stocksymbol+'&palette=Financial-Light&showLogo=Title'
+  var link = 'https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=B54B476A3E11492F93195F7F1533E3A7&symbol='+stocksymbol+'&palette=Financial-Light&showLogo=Title'
     $("#btn_newtab").click(function(){
         $("#myModal").modal('show');
         $("#graph").attr('src', link);
