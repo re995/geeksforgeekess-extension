@@ -89,8 +89,8 @@ function tryShowPopup(currentUrl) {
         <div class="modal-dialog modal-lg">
         <div class="modal-content"><div>
         <iframe frameBorder='0' scrolling='no' width='800' height='400' id="graph" src='https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=01E29D3ADEC844F799CC7476C142A17B&symbol=TSLA&palette=Financial-Light&showLogo=Title'></iframe></div>
-            <div id='moreinfo_content_top' dir='rtl' style="text-align:right;" ></div>
-            <div id='moreinfo_content_extra' dir='rtl' style="text-align:right;" ></div>
+            <div id='moreinfo_content_top' class='buytheway' dir='rtl' style="text-align:right;" ></div>
+            <div id='moreinfo_content_extra' class='buytheway' dir='rtl' style="text-align:right;" ></div>
             </div>
         </div>
     </div>
