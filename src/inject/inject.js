@@ -66,27 +66,25 @@ function tryShowPopup(currentUrl) {
 
   var popupToInject = '<div style="background:inherit" class="menu-wrap buytheway">' +
 				'<nav style="background:inherit" class="menu buytheway sticky navbar navbar-default navbar-fixed-top" >' +
-        "<iframe id='st_af7a75818bc7411cab50ef05fe0494a1' frameBorder='0' scrolling='no' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=01E29D3ADEC844F799CC7476C142A17B&symbols=" + stocksymbol + ";AAPL;MSFT;GOOG;FB;ORCL&palette=Financial-Dark&layoutType=2&onload=st_af7a75818bc7411cab50ef05fe0494a1'></iframe>" +
-    '<div class="center-vertical buytheway" style="padding-right:2em">' +
-    '<span style="font-size:1.5em; text-align:center">SOME TEXT HERE</span>' +
-    '</div>' +
-    '<button id ="btn_newtab" class="buytheway center-vertical button button--shikoba button--round-s button--border-thin button--size-l"><i class="button__icon icon"><img src="chrome-extension://' + myid + '/icons/newtabicon.png" /></i><span>עולם ההשקעות קורא לך!</span></button>' +
+        "<iframe id='st_af7a75818bc7411cab50ef05fe0494a1' frameBorder='0' scrolling='no' width='100%' height='50%' src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=01E29D3ADEC844F799CC7476C142A17B&symbols=" + stocksymbol + ";AAPL;MSFT;GOOG;FB;ORCL&palette=Financial-Dark&layoutType=2&onload=st_af7a75818bc7411cab50ef05fe0494a1'></iframe>" +
+    '<button id ="btn_newtab" class=" btn btn-sm btn-primary"><i class="button__icon icon"><img src="chrome-extension://' + myid + '/icons/newtabicon.png" /></i><span>לחצי כאן!</span></button>' +
 
     '<a href="#" id="btn_close" class="close-thin buytheway"></a>' +
 				'</nav>' +
     '</div>' +
     `
-    <div id="myModal" class="modal fade" tabindex="-1">
-        <div class="modal-dialog">
+    <div style="margin-top:60px;" id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                   <iframe frameBorder='0' scrolling='no' width='600' height='320' id="graph" src='https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=01E29D3ADEC844F799CC7476C142A17B&symbol=TSLA&palette=Financial-Light&showLogo=Title'></iframe>
                   <div id='moreinfo_content'></div>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
 
     `
+
 
     ;
 
@@ -124,8 +122,7 @@ function setupMoreInfoPopup(stocksymbol) {
     if (responseText.length == 0) {
         console.error("Error while getting more info from server!")
     }
-    
+
     $("#moreinfo_content").html(responseText);
 
 }
-
